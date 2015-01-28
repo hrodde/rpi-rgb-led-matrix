@@ -97,11 +97,7 @@ int main(int argc, char *argv[]) {
   const int x = x_orig;
   int y = y_orig;
 
-  if (isatty(STDIN_FILENO)) {
-    // Only give a message if we are interactive. If connected via pipe, be quiet
-    printf("Enter lines. Full screen or empty line clears screen.\n"
-           "Supports UTF-8. CTRL-D for exit.\n");
-  }
+  printf(line);
 
   bool line_empty = strlen(line) == 0;
   if ((y + font.height() > canvas->height()) || line_empty) {
