@@ -99,15 +99,11 @@ int main(int argc, char *argv[]) {
   const int x = x_orig;
   int y = y_orig;
 
-  printf(line);
-  printf(font);
-
   bool line_empty = strlen(line) == 0;
   if ((y + font.height() > canvas->height()) || line_empty) {
     canvas->Clear();
     y = y_orig;
   }
-  printf(line_empty);
   if (line_empty)
     return -1;
   rgb_matrix::DrawText(canvas, font, x, y + font.baseline(), color, line);
