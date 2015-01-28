@@ -103,8 +103,6 @@ int main(int argc, char *argv[]) {
            "Supports UTF-8. CTRL-D for exit.\n");
   }
 
-  const size_t last = strlen(line);
-  if (last > 0) line[last - 1] = '\0';  // remove newline.
   bool line_empty = strlen(line) == 0;
   if ((y + font.height() > canvas->height()) || line_empty) {
     canvas->Clear();
