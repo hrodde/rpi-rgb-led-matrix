@@ -111,7 +111,7 @@ int main(int argc, char *argv[]) {
     y = y_orig;
   }
   if (line_empty)
-    continue;
+    return -1;
   rgb_matrix::DrawText(canvas, font, x, y + font.baseline(), color, line);
   y += font.height();
 
