@@ -35,7 +35,6 @@ static bool parseColor(Color *c, const char *str) {
 }
 
 int main(int argc, char *argv[]) {
-  const unsigned int microseconds = 2000000;
   const char *line = NULL;
   Color color(255, 0, 0);
   const char *bdf_font_file = "/root/rpi-rgb-led-matrix/fonts/7x14.bdf";
@@ -43,14 +42,16 @@ int main(int argc, char *argv[]) {
   int chain = 3;
   int x_orig = 1;
   int y_orig = 1;
+  int microseconds = 2000000;
 
   int opt;
-  while ((opt = getopt(argc, argv, "r:c:x:y:f:t:C:")) != -1) {
+  while ((opt = getopt(argc, argv, "r:c:x:y:f:t:m:C:")) != -1) {
     switch (opt) {
     case 'r': rows = atoi(optarg); break;
     case 'c': chain = atoi(optarg); break;
     case 'x': x_orig = atoi(optarg); break;
     case 'y': y_orig = atoi(optarg); break;
+    case 'm': microseconds = atoi(optarg); break;
     case 'f': bdf_font_file = strdup(optarg); break;
     case 't': line = strdup(optarg); break;
     case 'C':
