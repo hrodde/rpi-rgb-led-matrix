@@ -35,7 +35,7 @@ static bool parseColor(Color *c, const char *str) {
 }
 
 int main(int argc, char *argv[]) {
-  char line* = NULL;
+  const char *line = NULL;
   Color color(255, 0, 0);
   const char *bdf_font_file = "/root/rpi-rgb-led-matrix/fonts/7x14.bdf";
   int rows = 16;
